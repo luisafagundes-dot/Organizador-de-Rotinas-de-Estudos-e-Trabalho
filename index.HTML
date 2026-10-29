@@ -3,135 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luisa's Workspace</title>
+    <title>Organizador de Rotinas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="background-shapes" aria-hidden="true"></div>
-
-    <header>
-        <h1>Luisa's Workspace</h1>
-        <p>Identifique desafios da rotina de estudos e trabalho para organizar melhor o seu dia.</p>
+    <header class="header">
+        <h1>Organizador de Rotinas de Estudos e Trabalho do [Seu Nome]</h1>
+        <p>Identifique os obstáculos do seu dia a dia e encontre estratégias para superar o caos.</p>
     </header>
 
-    <main class="cards-container">
-
-        <div class="card">
-            <h3>📚 Falta de Planejamento</h3>
-            <p>Dificuldade em definir prioridades e organizar tarefas.</p>
-            <a href="#modal1" class="btn-card">Ver detalhes</a>
+    <main class="container">
+        <!-- Card 1 -->
+        <div class="card" onclick="openModal('modal1')">
+            <div class="card-icon">⏳</div>
+            <h2>Procrastinação & Acúmulo</h2>
+            <p>Deixar tarefas para a última hora gera estresse e sobrecarga nas entregas.</p>
+            <button class="btn-card">Ver detalhes e soluções</button>
         </div>
 
-        <div class="card">
-            <h3>⏰ Procrastinação</h3>
-            <p>Tarefas importantes sempre ficam para depois.</p>
-            <a href="#modal2" class="btn-card">Ver detalhes</a>
+        <!-- Card 2 -->
+        <div class="card" onclick="openModal('modal2')">
+            <div class="card-icon">💼</div>
+            <h2>Conflito Trabalho x Estudos</h2>
+            <p>Dificuldade em equilibrar o expediente do trabalho com a rotina acadêmica.</p>
+            <button class="btn-card">Ver detalhes e soluções</button>
         </div>
 
-        <div class="card">
-            <h3>📱 Distrações Digitais</h3>
-            <p>Notificações e redes sociais interrompem o foco.</p>
-            <a href="#modal3" class="btn-card">Ver detalhes</a>
+        <!-- Card 3 -->
+        <div class="card" onclick="openModal('modal3')">
+            <div class="card-icon">🧠</div>
+            <h2>Sobrecarga Mental & Foco</h2>
+            <p>Falta de concentração, distrações constantes e sensação diária de cansaço extremo.</p>
+            <button class="btn-card">Ver detalhes e soluções</button>
         </div>
 
-        <div class="card">
-            <h3>😴 Cansaço Mental</h3>
-            <p>Excesso de atividades gera baixa produtividade.</p>
-            <a href="#modal4" class="btn-card">Ver detalhes</a>
+        <!-- Card 4 -->
+        <div class="card" onclick="openModal('modal4')">
+            <div class="card-icon">📅</div>
+            <h2>Desorganização de Metas</h2>
+            <p>Falta de priorização e não saber por onde começar as tarefas diárias.</p>
+            <button class="btn-card">Ver detalhes e soluções</button>
         </div>
-
-        <div class="card">
-            <h3>📅 Acúmulo de Prazos</h3>
-            <p>Muitas entregas concentradas em poucos dias.</p>
-            <a href="#modal5" class="btn-card">Ver detalhes</a>
-        </div>
-
-        <div class="card">
-            <h3>📖 Revisões Inconsistentes</h3>
-            <p>Conteúdo estudado é esquecido rapidamente.</p>
-            <a href="#modal6" class="btn-card">Ver detalhes</a>
-        </div>
-
-        <div class="card">
-            <h3>💼 Equilíbrio Estudo e Trabalho</h3>
-            <p>Dificuldade em conciliar responsabilidades.</p>
-            <a href="#modal7" class="btn-card">Ver detalhes</a>
-        </div>
-
-        <div class="card">
-            <h3>🎯 Falta de Metas Claras</h3>
-            <p>Objetivos pouco definidos geram desmotivação.</p>
-            <a href="#modal8" class="btn-card">Ver detalhes</a>
-        </div>
-
     </main>
 
-    <!-- MODAIS -->
+    <!-- Estruturas Modais -->
 
-    <div id="modal1" class="modal" role="dialog" aria-modal="true">
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
         <div class="modal-content">
-            <h2>📚 Falta de Planejamento</h2>
-            <p>Sem um plano claro, tarefas importantes acabam sendo esquecidas ou adiadas. Isso aumenta a ansiedade e reduz a eficiência.</p>
-            <a href="#" class="close">Fechar</a>
+            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+            <h2>Procrastinação & Acúmulo de Tarefas</h2>
+            <hr>
+            <h3>Insatisfação do Dia a Dia:</h3>
+            <p>A sensação constante de culpa por adiar compromissos e o pânico no momento em que os prazos se aproximam.</p>
+            <h3>Como Resolver:</h3>
+            <ul>
+                <li>Utilize a <strong>Técnica Pomodoro</strong> (25 min de foco, 5 min de pausa).</li>
+                <li>Divida tarefas grandes em microetapas simples.</li>
+                <li>Defina apenas 3 metas prioritárias por dia.</li>
+            </ul>
         </div>
     </div>
 
-    <div id="modal2" class="modal" role="dialog" aria-modal="true">
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
         <div class="modal-content">
-            <h2>⏰ Procrastinação</h2>
-            <p>O hábito de adiar tarefas gera acúmulo de atividades e aumenta a pressão próxima dos prazos.</p>
-            <a href="#" class="close">Fechar</a>
+            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+            <h2>Conflito entre Trabalho e Estudos</h2>
+            <hr>
+            <h3>Insatisfação do Dia a Dia:</h3>
+            <p>Chegar cansado do trabalho e ter que render nos estudos, sentindo que ambos os lados estão sendo prejudicados.</p>
+            <h3>Como Resolver:</h3>
+            <ul>
+                <li>Blocos de tempo rígidos (Time Blocking) para delimitar o fim do trabalho.</li>
+                <li>Aproveitar pequenos intervalos (transporte público, horário de almoço) para revisões rápidas.</li>
+                <li>Alinhar expectativas e limites de horários na sua rotina diária.</li>
+            </ul>
         </div>
     </div>
 
-    <div id="modal3" class="modal" role="dialog" aria-modal="true">
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
         <div class="modal-content">
-            <h2>📱 Distrações Digitais</h2>
-            <p>Notificações constantes prejudicam a concentração e dificultam sessões longas de estudo.</p>
-            <a href="#" class="close">Fechar</a>
+            <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+            <h2>Sobrecarga Mental & Distrações</h2>
+            <hr>
+            <h3>Insatisfação do Dia a Dia:</h3>
+            <p>Abrir várias abas, checar notificações a todo momento e terminar o dia com a sensação de não ter produzido nada.</p>
+            <h3>Como Resolver:</h3>
+            <ul>
+                <li>Ative o modo "Não Perturbe" ou use bloqueadores de redes sociais no celular.</li>
+                <li>Anote todas as preocupações e pendências em um papel antes de começar a estudar (Esvaziamento Mental).</li>
+                <li>Garanta pausas ativas longe das telas durante o estudo.</li>
+            </ul>
         </div>
     </div>
 
-    <div id="modal4" class="modal" role="dialog" aria-modal="true">
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
         <div class="modal-content">
-            <h2>😴 Cansaço Mental</h2>
-            <p>Excesso de demandas pode causar esgotamento, falta de foco e baixa absorção de conteúdo.</p>
-            <a href="#" class="close">Fechar</a>
+            <span class="close-btn" onclick="closeModal('modal4')">&times;</span>
+            <h2>Falta de Priorização e Planejamento</h2>
+            <hr>
+            <h3>Insatisfação do Dia a Dia:</h3>
+            <p>Sentir que o tempo voa sem concluir o que era realmente importante, gastando energia em tarefas secundárias.</p>
+            <h3>Como Resolver:</h3>
+            <ul>
+                <li>Aplique a <strong>Matriz de Eisenhower</strong> (Urgente vs. Importante).</li>
+                <li>Planeje o dia seguinte na noite anterior.</li>
+                <li>Utilize gerenciadores visuais como Trello, Notion ou uma agenda física.</li>
+            </ul>
         </div>
     </div>
 
-    <div id="modal5" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <h2>📅 Acúmulo de Prazos</h2>
-            <p>Projetos, provas e trabalhos podem coincidir, exigindo organização preventiva.</p>
-            <a href="#" class="close">Fechar</a>
-        </div>
-    </div>
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
 
-    <div id="modal6" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <h2>📖 Revisões Inconsistentes</h2>
-            <p>A ausência de revisões periódicas reduz significativamente a retenção do aprendizado.</p>
-            <a href="#" class="close">Fechar</a>
-        </div>
-    </div>
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
 
-    <div id="modal7" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <h2>💼 Equilíbrio Estudo e Trabalho</h2>
-            <p>Encontrar tempo para desenvolvimento profissional e acadêmico é um dos maiores desafios da rotina.</p>
-            <a href="#" class="close">Fechar</a>
-        </div>
-    </div>
-
-    <div id="modal8" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <h2>🎯 Falta de Metas Claras</h2>
-            <p>Sem objetivos definidos, torna-se mais difícil medir progresso e manter a motivação.</p>
-            <a href="#" class="close">Fechar</a>
-        </div>
-    </div>
-
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target === modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
