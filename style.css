@@ -1,217 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Fundo da página com efeito tridimensional */
 body {
+    background-color: #0d1117;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(30, 41, 59, 0.8) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.9) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(30, 27, 75, 0.5) 0px, transparent 100%);
+    background-attachment: fixed;
+    color: #e2e8f0;
     min-height: 100vh;
-    background: linear-gradient(
-        135deg,
-        #fffef5,
-        #fff8d8,
-        #fff5bf
-    );
-    overflow-x: hidden;
-    position: relative;
-    color: #444;
+    padding: 20px;
 }
 
-/* Fundo 3D sutil */
-.background-shapes::before,
-.background-shapes::after {
-    content: "";
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(90px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-.background-shapes::before {
-    width: 350px;
-    height: 350px;
-    background: #ffe082;
-    top: -100px;
-    left: -80px;
-}
-
-.background-shapes::after {
-    width: 300px;
-    height: 300px;
-    background: #fff59d;
-    bottom: -100px;
-    right: -80px;
-}
-
-/* Header */
-header {
+/* Cabeçalho */
+.header {
     text-align: center;
-    padding: 60px 20px 40px;
+    margin: 40px 0;
 }
 
-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #8d6e63;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.05);
+.header h1 {
+    font-size: 2.2rem;
+    color: #38bdf8;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
-header p {
-    color: #6d6d6d;
-    font-size: 1.05rem;
-    max-width: 600px;
-    margin: 0 auto;
+.header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
 }
 
-/* Grid de Bloquinhos (Cards) */
-.cards-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+/* Container de Cards */
+.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    padding-bottom: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Bloquinho Individual */
+/* Estilo dos Cards (Efeito 3D/Elevado) */
 .card {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border-radius: 12px;
     padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.5),
+        -5px -5px 15px rgba(255, 255, 255, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 
-        8px 8px 20px rgba(0, 0, 0, 0.05),
-        -6px -6px 15px rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 
-        12px 12px 25px rgba(0, 0, 0, 0.08),
-        -8px -8px 20px rgba(255, 255, 255, 0.9);
+        8px 12px 20px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.3);
 }
 
-.card h3 {
-    color: #8c6f14;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: #f1f5f9;
+    margin-bottom: 10px;
 }
 
 .card p {
-    color: #555;
+    color: #94a3b8;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.5;
     margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .btn-card {
-    text-decoration: none;
-    background: #ffe082;
-    color: #5a4c00;
-    padding: 10px 18px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: background 0.3s ease, transform 0.2s ease;
-    align-self: flex-start;
+    background-color: #0284c7;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 .btn-card:hover {
-    background: #ffd54f;
-    transform: translateY(-2px);
+    background-color: #0369a1;
 }
 
 /* Modal */
 .modal {
+    display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
     justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    align-items: center;
     z-index: 1000;
 }
 
-.modal:target {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
 .modal-content {
+    background: #1e293b;
+    border: 1px solid #334155;
     width: 90%;
-    max-width: 480px;
-    background: #fffef7;
-    border-radius: 24px;
-    padding: 30px 35px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
+    max-width: 550px;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-out;
 }
 
-.modal:target .modal-content {
-    transform: translateY(0);
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f1f5f9;
 }
 
 .modal-content h2 {
-    color: #8c6f14;
-    font-size: 1.4rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.modal-content hr {
+    border: 0;
+    height: 1px;
+    background: #334155;
     margin-bottom: 15px;
 }
 
+.modal-content h3 {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    margin: 15px 0 5px 0;
+}
+
 .modal-content p {
-    color: #555;
-    line-height: 1.7;
-    font-size: 1rem;
-    margin-bottom: 25px;
+    color: #94a3b8;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
-.close {
-    display: inline-block;
-    text-decoration: none;
-    background: #ffe082;
-    color: #5a4c00;
-    padding: 10px 22px;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: background 0.3s ease;
+.modal-content ul {
+    margin-left: 20px;
+    margin-top: 8px;
+    color: #94a3b8;
 }
 
-.close:hover {
-    background: #ffd54f;
+.modal-content li {
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    .cards-container {
-        gap: 18px;
-    }
-
-    .card {
-        padding: 20px;
-    }
+.modal-content strong {
+    color: #e2e8f0;
 }
